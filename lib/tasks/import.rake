@@ -6,10 +6,9 @@ namespace :drafty do
     Player.destroy_all
 
     { :qb => "qb.xlsx",
-              :rb => "rb.xlsx",
+             :rb => "rb.xlsx",
               :wr => "wr.xlsx",
               :te => "te.xlsx",
-              :de => "de.xlsx"
     }.each do |position, filename|
 
         spreadsheet = Roo::Excelx.new("#{Rails.root + "lib/tasks/" + filename}", file_warning: :ignore)
@@ -19,7 +18,7 @@ namespace :drafty do
         # replace here with roo gem
         header = spreadsheet.row(1).select(&:present?).map{|k| k.parameterize.gsub("-","_").to_sym}
         header.each_with_index do |symbol, i|
-          map[symbol] = i 
+          map[symbol] = i
         end
 
 
