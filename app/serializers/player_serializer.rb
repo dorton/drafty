@@ -5,4 +5,8 @@ class PlayerSerializer < ActiveModel::Serializer
   def full_name
     [object.firstname, object.lastname].join(" ")
   end
+
+  def ppg
+    object.ppg.round(1)
+  end
 end
