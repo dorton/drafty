@@ -6,7 +6,7 @@ module Api
     end
 
     def index
-      render json: Player.all.order("total DESC")
+      render json: Player.all.order("rank")
     end
 
     def show
