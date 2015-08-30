@@ -21,6 +21,5 @@ module Drafty
     # config.i18n.default_locale = :de
 
 
-    config.rails_lineman.lineman_project_location = "../drafty-ember"
   end
 end

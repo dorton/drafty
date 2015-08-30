@@ -11,6 +11,5 @@ gem 'spring',        group: :development
 gem 'roo'
 gem 'active_model_serializers'
 gem 'foreman', group: [:development, :test]
-gem 'rails-lineman'
 gem 'dotenv-rails'
 gem 'pusher'

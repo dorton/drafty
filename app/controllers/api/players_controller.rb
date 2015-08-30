@@ -1,8 +1,6 @@
 module Api
   class PlayersController < ApplicationController
 
-    skip_before_filter :verify_authenticity_token
-
     before_action do
       request.format = :json
     end
