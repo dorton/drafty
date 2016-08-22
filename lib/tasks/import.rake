@@ -38,8 +38,11 @@ namespace :drafty do
           item = Player.new(new_attrs)
           item.position = position
 
-          verb = item.new_record? ? "Create" : "Update"
-          item.save if item.errors.empty?
+          if item.valid?
+            item.save!
+          else
+            puts item.inspect
+          end
 
         end
 

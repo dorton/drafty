@@ -13,3 +13,4 @@ gem 'active_model_serializers'
 gem 'foreman', group: [:development, :test]
 gem 'dotenv-rails'
 gem 'pusher'
+gem 'pry'
