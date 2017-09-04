@@ -20,7 +20,7 @@ namespace :drafty do
         map = {}
 
         # replace here with roo gem
-        header = spreadsheet.row(1).select(&:present?).map{|k| k.parameterize.gsub("-","_").to_sym}
+        header = spreadsheet.row(1).select(&:present?).map{|k| k.parameterize.underscore.to_sym}
         header.each_with_index do |symbol, i|
           map[symbol] = i
         end
@@ -28,7 +28,6 @@ namespace :drafty do
 
         (2..spreadsheet.last_row).each do |i|
           row = spreadsheet.row(i)
-
           new_attrs = {}
 
           fields = Player.new.attributes.keys.collect { |key| key.to_sym }
