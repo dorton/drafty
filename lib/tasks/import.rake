@@ -1,5 +1,9 @@
 namespace :drafty do
 
+  task :export => :environment do
+    File.open("output.json", "wb") {|f| f << Player.all.to_json }
+  end
+
   desc 'import CSV files'
   task :import => :environment do
     puts "Importing"
